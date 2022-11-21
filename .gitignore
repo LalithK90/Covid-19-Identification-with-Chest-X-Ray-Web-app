@@ -129,6 +129,6 @@ dmypy.json
 .pyre/
 
 # local files
-*.h5
+
 Procfile
 .DS_Store
