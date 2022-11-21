@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/app.css">
+</head>
+
+<body class="main-bg">
+    <header>
+        <div class="container text-center">
+            <!-- heading -->
+            <div class="container-fluid pb-4">
+                <div class="form-group">
+                    <img src="{{url_for('static', filename='img/main-img.png')}}" class="img" id="main-img" />
+                </div>
+            </div>
+            <!-- form part -->
+            <div class="container-fluid">
+                <div class="form-group">
+                    <div class="custom-file">
+                        <input type="file" name="file" class="custom-file-input form-control" id="image-selector">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+                    <small id="image-selector" class="form-text text-muted">Image should be .png, .jpg or .jpeg file
+                        format</small>
+
+                </div>
+                <!-- load image -->
+                <div class="form-group">
+                    <img id="selected-image" width="400" src=""
+                        class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" />
+                </div>
+                <div class="form-group">
+                    <button id="predict-button" class="btn-block btn-info btn-lg">PREDICT</button>
+                </div>
+            </div>
+            <!-- result showing part -->
+            <div class="container-fluid" id="result-show">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <p class="p">PREDICTION </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <span id="result" class="p">...</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 mt-4">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <p class="p">PROBABILITY</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <span id="probability" class="p">...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- caution section  -->
+    <section>
+
+
+    </section>
+
+    <!-- about me -->
+    <footer>
+
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="../static/js/app.js"></script>
+
+</body>
+
+</html>
