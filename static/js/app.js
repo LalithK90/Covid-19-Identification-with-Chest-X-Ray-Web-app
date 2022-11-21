@@ -28,7 +28,7 @@ $("#predict-button").click(function () {
     let message = {
         image: base64Image
     };
-    console.log(message);
+    // console.log(message);
 
     if (message == null) {
         console.log("sdsad");
