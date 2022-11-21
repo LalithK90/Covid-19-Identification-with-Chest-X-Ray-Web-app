@@ -17,5 +17,5 @@ Pillow==9.2.0
 keras==2.10.0
 matplotlib==3.6.1
 tqdm
-tensorflow==2.10.0
+tensorflow==2.10.1
 pip==22.3 
