@@ -1,13 +1,34 @@
 
 $(document).ready(function () {
     result_hide();
+    load_bg();
 });
+
+function covid_warning_bg () {
+    $("#main-bg").removeClass("bg-success");
+    $("#main-bg").addClass("bg-danger");
+}
+
+function normal_warning_bg () {
+    $("#main-bg").removeClass("bg-danger");
+    $("#main-bg").addClass("bg-success");
+}
+function load_bg () {
+    $("#main-bg").removeClass();
+}
 
 function result_hide () {
     $("#result-show").hide();
-} function result_show () {
+    $("#predict-button").hide();
+}
+function result_show () {
     $("#result-show").show();
 }
+
+function predict_button_show () {
+    $("#predict-button").show();
+}
+
 let base64Image;
 $("#image-selector").change(function () {
     result_hide();
@@ -21,26 +42,29 @@ $("#image-selector").change(function () {
     reader.readAsDataURL($("#image-selector")[0].files[0]);
     $("#result").text("");
     $("#probability").text("");
-
+    predict_button_show();
 });
 
 $("#predict-button").click(function () {
+
     let message = {
         image: base64Image
     };
-    // console.log(message);
 
-    if (message == null) {
-        console.log("sdsad");
-        window.alert("There is no selected image");
-    } else {
-        result_show();
-        $.post("http://127.0.0.1:5000/predict", JSON.stringify(message),
-            function (response) {
-                $("#result").text(response.prediction.result);
-                $("#probability").text(response.prediction.accuracy.toFixed(2));
-                console.log(response);
-            });
-    }
+    result_show();
+    $.post("http://127.0.0.1:5000/predict", JSON.stringify(message),
+        function (response) {
+            let result = response.prediction.result;
+            $("#result").text(result);
+            $("#probability").text(response.prediction.accuracy.toFixed(2));
+            if (result === "Covid19 Negative") {
+                normal_warning_bg();
+            }
+            if (result === "Covid19 Positive") {
+                covid_warning_bg();
+            }
+            console.log(response);
+        });
+
 
 });

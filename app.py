@@ -29,6 +29,11 @@ def preprocess(img):
 	reshaped=resized.reshape(1,img_size,img_size)
 	return reshaped
 
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
 @app.route("/")
 def index():
 	return(render_template("index.html"))
@@ -46,17 +51,17 @@ def predict():
 	test_image=preprocess(image)
 
 	prediction = model.predict(test_image)
+	result_p = prediction[0][0]
+	print(result_p)
 	result=np.argmax(prediction,axis=1)[0]
 	accuracy=float(np.max(prediction,axis=1)[0])
 
 	label=label_dict[result]
 
-	print(prediction,result,accuracy)
+	print(f'Prediction : {prediction}, Result : {result}, Accuracy : {accuracy}')
 
-	response = {'prediction': {'result': label,'accuracy': accuracy}}
+	response = {'prediction': {'result' : label, 'accuracy' : accuracy}}
 
 	return jsonify(response)
 
 app.run(debug=True)
-
-#<img src="" id="img" crossorigin="anonymous" width="400" alt="Image preview...">
