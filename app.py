@@ -1,3 +1,7 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
+import tensorflow as tf
+
 from flask import Flask, render_template, redirect, url_for, request,jsonify
 from keras.models import load_model
 import cv2
