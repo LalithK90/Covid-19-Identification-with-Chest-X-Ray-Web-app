@@ -56,7 +56,7 @@ $("#predict-button").click(function () {
         function (response) {
             let result = response.prediction.result;
             $("#result").text(result);
-            $("#probability").text(response.prediction.accuracy.toFixed(2));
+            $("#probability").text(response.prediction.accuracy);
             if (result === "Covid19 Negative") {
                 normal_warning_bg();
             }

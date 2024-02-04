@@ -1,8 +1,14 @@
 #main-img{
-  height:30%;
-  width: 30%;
+  height:15%;
+  width: 15%;
 }
 
-.bg-danger{
-  color: rgb(236, 110, 110);
+
+
+body{
+  color: black;
+}
+a{
+  color: black;
+ text-decoration: none !important;
 }

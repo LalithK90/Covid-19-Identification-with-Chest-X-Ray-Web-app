@@ -1,6 +1,6 @@
-from flask import Flask, render_template, redirect, url_for, request,jsonify
-from keras.models import load_model
+from  keras.models import load_model
 import cv2
+from flask import Flask, render_template, redirect, url_for, request,jsonify
 import numpy as np
 import base64
 from PIL import Image
