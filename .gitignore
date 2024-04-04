@@ -134,5 +134,3 @@ Procfile
 .DS_Store
 *.bin
 Note.txt
-
-streamlite/*
